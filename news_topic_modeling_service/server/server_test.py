@@ -91,15 +91,6 @@ def classify(text):
     topic = news_classes.class_map[str(np.argmax(y_predicted) + 1)]
     return topic
 
-
-
-
-# def input_fn(x):
-#     dataset = tf.data.Dataset.from_tensor_slices(x)
-#     dataset = dataset.batch(32)
-#     return dataset
-
-
 def test_basic():
     newsTitle = "8 reasons Andrew Puzder's nomination is a mess"
     topic = classify(newsTitle)

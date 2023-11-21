@@ -55,11 +55,7 @@ def clean_text(text):
     text = re.sub(r"\'re", " are ", text)
     text = re.sub(r"\'d", " would ", text)
     text = re.sub(r"\'ll", " will ", text)
-
-    # ## Remove puncuation
-    # table = str.maketrans({key: None for key in string.punctuation})
-    # text = text.translate(table)
-
+    
     ## clean non alphanumeric chars
     text = re.sub(r"[^A-Za-z0-9^,!.\/'+-=]", " ", text)
 
