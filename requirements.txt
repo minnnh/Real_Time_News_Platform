@@ -1,0 +1,13 @@
+python-jsonrpc
+jsonrpclib-pelix
+pymongo
+pika
+redis
+beautifulsoup4
+requests
+scikit-learn
+python-dateutil
+numpy
+pytest-shutil
+pandas
+tensorflow

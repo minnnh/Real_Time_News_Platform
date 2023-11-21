@@ -1,0 +1,14 @@
+.login-panel {
+    margin: auto;
+    width: 50%;
+}
+
+.error-message {
+    padding-left: 20px;
+    color: burlywood;
+}
+
+.re-enter-message {
+    padding-left: 20px;
+    color: #FA8072;
+}

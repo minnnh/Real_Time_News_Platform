@@ -1,0 +1,4 @@
+{
+  "mongoDbUri": "mongodb://localhost:27017/tap-news",
+  "jwtSecret": "it's a jsonwebtoken secret!!"
+}
