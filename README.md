@@ -4,7 +4,7 @@ Real Time News Scraping and Recommendation System is a web application that prov
 ## Demo
 ![show](./img/show2.gif)
 ## Environment
-- Python 3.11
+- Python 3.8.18
 - npm 10.1
 - Node.js v20.9
 - Nodemon 3.0.1
