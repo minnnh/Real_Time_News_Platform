@@ -4,6 +4,7 @@ import os
 import pandas as pd
 import pickle
 import shutil
+import sys
 import tensorflow as tf
 # import tensorflow.compat.v1 as tf
 
@@ -22,14 +23,18 @@ from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize
 
-MODEL_OUTPUT_DIR = '../model/'
-DATA_SET_FILE = '../data/labeled_news.csv'
-VARS_FILE = '../model/vars'
-TOKENIZER_SAVE_FILE = '../model/tokenizer_save_file'
-MAX_DOCUMENT_LENGTH = 380
-N_CLASSES = 8
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'config'))
 
-REMOVE_PREVIOUS_MODEL = False
+from news_topic_modeling_service_config import *
+
+# MODEL_OUTPUT_DIR = '../model/'
+# DATA_SET_FILE = '../data/labeled_news.csv'
+# VARS_FILE = '../model/vars'
+# TOKENIZER_SAVE_FILE = '../model/tokenizer_save_file'
+# MAX_DOCUMENT_LENGTH = 380
+# N_CLASSES = 8
+
+# REMOVE_PREVIOUS_MODEL = False
 
 if os.path.exists(MODEL_OUTPUT_DIR):
     REMOVE_PREVIOUS_MODEL = True

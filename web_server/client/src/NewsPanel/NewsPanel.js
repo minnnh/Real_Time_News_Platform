@@ -56,6 +56,8 @@ class NewsPanel extends React.Component {
           news:this.state.news ? this.state.news.concat([news]) : news,
           pageNum: this.state.pageNum + 1
         });
+
+
       });
   }
 

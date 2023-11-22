@@ -9,11 +9,14 @@ from bson.json_util import dumps
 from jsonrpclib.SimpleJSONRPCServer import SimpleJSONRPCServer
 
 sys.path.append(os.path.join(os.path.dirname(__file__),'..','common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
+
+from backend_server_config import *
 
 import mongodb_client
 
-SERVER_HOST = 'localhost'
-SERVER_PORT = 4040
+# SERVER_HOST = 'localhost'
+# SERVER_PORT = 4040
 
 # test function
 def add(a, b):

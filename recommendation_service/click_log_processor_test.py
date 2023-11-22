@@ -7,13 +7,15 @@ from datetime import datetime
 
 # import common package in parent directory
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
 
+from recommendation_service_config import *
 import mongodb_client
 
-PREFERENCE_MODEL_TABLE_NAME = "user_preference_model"
-NEWS_TABLE_NAME = "news-test"
+# PREFERENCE_MODEL_TABLE_NAME = "user_preference_model"
+# NEWS_TABLE_NAME = "news-test"
 
-NUM_OF_CLASSES = 17
+# NUM_OF_CLASSES = 17
 
 # Start MongoDB before running following tests.
 def test_basic():

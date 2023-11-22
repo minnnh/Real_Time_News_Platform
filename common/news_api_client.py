@@ -1,14 +1,12 @@
 import requests
 from json import loads
+import sys
+import os
 
-NEWS_API_ENDPOINT = 'https://newsapi.org/v1/'
-NEWS_API_KEY = '29e05503b1704fd3872d835d7627a065'
-ARTICLES_API = 'articles'
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
+from common_config import *
 
-CNN = 'cnn'
-DEFAULT_SOURCES = [CNN]
-
-SORT_BY_TOP = 'top'
+# SORT_BY_TOP = 'top'
 
 def buildUrl(end_point = NEWS_API_ENDPOINT, api_name = ARTICLES_API):
 	return end_point + api_name

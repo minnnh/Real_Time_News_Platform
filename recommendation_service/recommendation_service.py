@@ -6,16 +6,16 @@ from jsonrpclib.SimpleJSONRPCServer import SimpleJSONRPCServer
 
 # import common package in parent directory
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
 
+from recommendation_service_config import *
 import mongodb_client
 
-PREFERENCE_MODEL_TABLE_NAME = "user_preference_model"
+# PREFERENCE_MODEL_TABLE_NAME = "user_preference_model"
 
-SERVER_HOST = 'localhost'
-SERVER_PORT = 5050
+# SERVER_HOST = 'localhost'
+# SERVER_PORT = 5050
 
-# Ref: https://www.python.org/dev/peps/pep-0485/#proposed-implementation
-# Ref: http://stackoverflow.com/questions/5595425/what-is-the-best-way-to-compare-floats-for-almost-equality-in-python
 def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
     return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
 

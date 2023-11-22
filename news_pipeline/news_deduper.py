@@ -6,21 +6,19 @@ from dateutil import parser
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
 
+from news_pipeline_config import *
 import mongodb_client
 import news_topic_modeling_service_client
 
 from cloudAMQP_client import CloudAMQPClient 
 
+# SLEEP_TIME_IN_SECONDS = 1
 
-DEDUPE_NEWS_TASK_QUEUE_URL = 'amqps://eviywzfr:Eu1cq8176zK4dfANwzaQVp57XIakXaT_@fish.rmq.cloudamqp.com/eviywzfr'
-DEDUPE_NEWS_TASK_QUEUE_NAME = 'tap-news-dedupe-news-task-queue'
+# NEWS_TABLE_NAME = "news-test"
 
-SLEEP_TIME_IN_SECONDS = 1
-
-NEWS_TABLE_NAME = "news-test"
-
-SAME_NEWS_SIMILARITY_THRESHOLD = 0.8
+# SAME_NEWS_SIMILARITY_THRESHOLD = 0.8
 cloudAMQP_client = CloudAMQPClient(DEDUPE_NEWS_TASK_QUEUE_URL, DEDUPE_NEWS_TASK_QUEUE_NAME)
 
 

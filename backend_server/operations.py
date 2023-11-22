@@ -10,24 +10,24 @@ from datetime import datetime
 
 # import common package in parent directory
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
 
-import mongodb_client #pylint: disable=import-error, wrong-import-position
+from backend_server_config import *
+
+import mongodb_client 
 import news_recommendation_service_client
 
 from cloudAMQP_client import CloudAMQPClient 
 
-REDIS_HOST = "localhost"
-REDIS_PORT = 6379
+# REDIS_HOST = "localhost"
+# REDIS_PORT = 6379
 
-LOG_CLICKS_TASK_QUEUE_URL = "amqps://hjdehfzs:SBV4KZbGx_pHacl42MzfYGlDzudQwqRZ@fish.rmq.cloudamqp.com/hjdehfzs"
-LOG_CLICKS_TASK_QUEUE_NAME = "tap-news-log-clicks-task-queue"
+# NEWS_TABLE_NAME = "news-test"
+# CLICK_LOGS_TABLE_NAME = 'click_logs'
 
-NEWS_TABLE_NAME = "news-test"
-CLICK_LOGS_TABLE_NAME = 'click_logs'
-
-NEWS_LIST_BATCH_SIZE = 10
-NEWS_LIMIT = 200
-USER_NEWS_TIME_OUT_IN_SECONDS = 60
+# NEWS_LIST_BATCH_SIZE = 10
+# NEWS_LIMIT = 200
+# USER_NEWS_TIME_OUT_IN_SECONDS = 60
 
 redis_client = redis.StrictRedis(REDIS_HOST, REDIS_PORT, db=0)
 cloudAMQP_client = CloudAMQPClient(LOG_CLICKS_TASK_QUEUE_URL, LOG_CLICKS_TASK_QUEUE_NAME)
@@ -88,7 +88,8 @@ def getNewsSummariesForUser(user_id, page_num):
             news['reason'] = 'Recommend'
         if news['publishedAt'].date() == datetime.today().date():
             news['time'] = 'today'
-    
+        news['published_date'] = news['publishedAt'].strftime('%Y-%m-%d')
+        
     return json.loads(dumps(sliced_news))
 
 

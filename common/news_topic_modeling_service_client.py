@@ -1,18 +1,13 @@
-# import jsonrpclib
-
-# URL = "http://localhost:6060/"
-
-# client = jsonrpclib.ServerProxy(URL)
-
-# def classify(text):
-#     topic = client.classify(text)
-#     print("Topic: %s" % str(topic))
-#     return topic
 import jsonrpclib
+import sys
+import os
 
-URL = "http://localhost:6060/"
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
+from common_config import *
 
-client = jsonrpclib.ServerProxy(URL)
+# TOPIC_URL = "http://localhost:6060/"
+
+client = jsonrpclib.ServerProxy(TOPIC_URL)
 
 def classify(text):
     topic = client.classify(text)

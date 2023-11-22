@@ -1,8 +1,11 @@
 from cloudAMQP_client import CloudAMQPClient
+import sys
+import os
 
-CLOUDAMQP_URL = "amqps://ahkufdzq:AVcDKu5oRlZd0bohjcB2wnIAiiR_E_XY@fish.rmq.cloudamqp.com/ahkufdzq"
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
+from common_config import *
 
-TEST_QUEUE_NAME = "test"
+# TEST_QUEUE_NAME = "test"
 
 def test_basic():
 	client = CloudAMQPClient(CLOUDAMQP_URL, TEST_QUEUE_NAME)

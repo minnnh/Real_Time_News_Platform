@@ -26,6 +26,17 @@ class NewsCard extends React.Component {
     }
 
     render() {
+      if (this.props.news.urlToImage == null || this.props.news.urlToImage == '') return
+      // const isoDateString = this.props.publishedAt;
+
+      // // Extract the date part
+      // const matchResult = isoDateString && isoDateString.match(/\("(.+)"\)/);
+      // // Convert the extracted date string to a Date object
+      // const extractedDate = new Date(extractedDateString);
+
+      // // Use extractedDate to format the date as a string
+      // const formattedDate = extractedDate.toLocaleDateString('en-US');
+
         return(
          <div className="news-container" onClick={(event) => this.redirectToUrl(this.props.news.url, event)}>
            <div className='row'>
@@ -42,6 +53,7 @@ class NewsCard extends React.Component {
                           {this.props.news.source != null && <div className='chip light-blue news-chip'>{this.props.news.source}</div>}
                           {this.props.news.reason != null && <div className='chip light-green news-chip'>{this.props.news.reason}</div>}
                           {this.props.news.time != null && <div className='chip amber news-chip'>{this.props.news.time}</div>}
+                          {this.props.news.published_date != null && <div className='chip amber news-chip'>{this.props.news.published_date}</div>}
                        </div>
                      </div>
                     </div>

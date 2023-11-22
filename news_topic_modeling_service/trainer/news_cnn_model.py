@@ -1,15 +1,20 @@
 import tensorflow as tf
+import sys
+import os
 
-EMBEDDING_SIZE = 64
-N_FILTERS = 32  # Increased the number of filters
-WINDOW_SIZE = 5
-FILTER_SHAPE1 = [WINDOW_SIZE, EMBEDDING_SIZE]
-FILTER_SHAPE2 = [WINDOW_SIZE, N_FILTERS]
-POOLING_WINDOW = 2
-POOLING_STRIDE = 2
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'config'))
 
-LEARNING_RATE = 0.001
-MAX_DOCUMENT_LENGTH = 380
+from news_topic_modeling_service_config import *
+# EMBEDDING_SIZE = 64
+# N_FILTERS = 32  # Increased the number of filters
+# WINDOW_SIZE = 5
+# FILTER_SHAPE1 = [WINDOW_SIZE, EMBEDDING_SIZE]
+# FILTER_SHAPE2 = [WINDOW_SIZE, N_FILTERS]
+# POOLING_WINDOW = 2
+# POOLING_STRIDE = 2
+
+# LEARNING_RATE = 0.001
+# MAX_DOCUMENT_LENGTH = 380
 
 def generate_cnn_model(n_classes, n_words, max_document_length=MAX_DOCUMENT_LENGTH):
     model = tf.keras.Sequential()

@@ -1,0 +1,35 @@
+SERVER_HOST = 'localhost'
+SERVER_PORT = 6060
+
+MODEL_DIR = '../model'
+MODEL_UPDATE_LAG_IN_SECONDS = 10
+
+N_CLASSES = 8
+
+VARS_FILE = '../model/vars'
+TOKENIZER_SAVE_FILE = '../model/tokenizer_save_file'
+
+n_words = 0
+
+MAX_DOCUMENT_LENGTH = 500
+
+classifier = None
+tokenizer = None 
+
+MODEL_OUTPUT_DIR = '../model/'
+DATA_SET_FILE = '../data/labeled_news.csv'
+# MAX_DOCUMENT_LENGTH = 380
+
+REMOVE_PREVIOUS_MODEL = False
+
+
+EMBEDDING_SIZE = 64
+N_FILTERS = 32  # Increased the number of filters
+WINDOW_SIZE = 5
+FILTER_SHAPE1 = [WINDOW_SIZE, EMBEDDING_SIZE]
+FILTER_SHAPE2 = [WINDOW_SIZE, N_FILTERS]
+POOLING_WINDOW = 2
+POOLING_STRIDE = 2
+
+LEARNING_RATE = 0.001
+# MAX_DOCUMENT_LENGTH = 380

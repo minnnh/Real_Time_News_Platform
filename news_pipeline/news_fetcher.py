@@ -8,16 +8,13 @@ from newspaper import Article
 # import common package in parent directory
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'scrapers'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'config'))
 
+from news_pipeline_config import *
 import cnn_news_scraper
 from cloudAMQP_client import CloudAMQPClient
 
-DEDUPE_NEWS_TASK_QUEUE_URL = 'amqps://eviywzfr:Eu1cq8176zK4dfANwzaQVp57XIakXaT_@fish.rmq.cloudamqp.com/eviywzfr'
-DEDUPE_NEWS_TASK_QUEUE_NAME = 'tap-news-dedupe-news-task-queue'
-SCRAPE_NEWS_TASK_QUEUE_URL = 'amqps://ahkufdzq:AVcDKu5oRlZd0bohjcB2wnIAiiR_E_XY@fish.rmq.cloudamqp.com/ahkufdzq'
-SCRAPE_NEWS_TASK_QUEUE_NAME = 'tap-news-scrape-news-task-queue'
-
-SLEEP_TIME_IN_SECONDS = 5
+# SLEEP_TIME_IN_SECONDS = 5
 
 dedupe_news_queue_client = CloudAMQPClient(DEDUPE_NEWS_TASK_QUEUE_URL, DEDUPE_NEWS_TASK_QUEUE_NAME)
 scrape_news_queue_client = CloudAMQPClient(SCRAPE_NEWS_TASK_QUEUE_URL, SCRAPE_NEWS_TASK_QUEUE_NAME)

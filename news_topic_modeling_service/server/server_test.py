@@ -16,23 +16,26 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'trainer'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'config'))
+
+from news_topic_modeling_service_config import *
 from news_cnn_model import generate_cnn_model
 from news_class_trainer import clean_text
 
-MODEL_DIR = '../model'
-MODEL_UPDATE_LAG_IN_SECONDS = 10
+# MODEL_DIR = '../model'
+# MODEL_UPDATE_LAG_IN_SECONDS = 10
 
-N_CLASSES = 8
+# N_CLASSES = 8
 
-VARS_FILE = '../model/vars'
-TOKENIZER_SAVE_FILE = '../model/tokenizer_save_file'
+# VARS_FILE = '../model/vars'
+# TOKENIZER_SAVE_FILE = '../model/tokenizer_save_file'
 
-n_words = 0
+# n_words = 0
 
-MAX_DOCUMENT_LENGTH = 500
+# MAX_DOCUMENT_LENGTH = 500
 
-classifier = None
-tokenizer = None  # Added
+# classifier = None
+# tokenizer = None  # Added
 
 def restore_vars():
     with open(VARS_FILE, 'rb') as f:
