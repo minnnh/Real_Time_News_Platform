@@ -2,7 +2,7 @@
 Real Time News Scraping and Recommendation System is a web application that provides users with the latest news from various sources such as CNN, BBC, and The New York Times. This system utilizes a robust news pipeline to scrape the most recent updates from different news outlets and tailors the news feed to each user's preferences.
 
 ## Demo
-![show](./img/show.gif)
+![show](./img/show2.gif)
 ## Environment
 - Python 3.11
 - npm 10.1
@@ -62,10 +62,10 @@ pip install -r requirements.txt
 ```
 3. run the system  
 ```sh
-sudo ./news_pipeline_launcher.sh
+sudo ./backend_launcher.sh
 ```
 ```sh
-sudo ./backend_launcher.sh
+sudo ./news_pipeline_launcher.sh
 ```
 ```sh
 sudo ./news_recommendation_launcher.sh
@@ -74,10 +74,13 @@ sudo ./news_recommendation_launcher.sh
 sudo ./news_topic_modeling_launcher.sh
 ```
 ```sh
-web_client_launcher.sh
+sudo ./click_log_processor.sh  
 ```
 ```sh
-web_server_launcher.sh
+sudo ./web_client_launcher.sh
+```
+```sh
+sudo ./web_server_launcher.sh
 ```
 
 ## Todo List
