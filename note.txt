@@ -1,0 +1,56 @@
+port:
+Mongoldb:27017
+Redis:6379
+Web-server:3000
+Web-client:3001
+Backend:4040
+news_topic_modeling:6060
+news_recommendation:5050
+
+============================
+Conda:
+Env name: tapNews 
+conda activate tapNews
+conda deactivate
+
+echo $CONDA_DEFAULT_ENV   
+// to show if the server is in env
+
+=======================
+Redis:
+Port: 6379
+
+brew services start redis
+brew services stop redis
+
+brew services restart redis
+
+redis-cli
+INFO keyspace
+flushall
+
+========================
+MongoDB
+
+Port: 27017
+
+brew services start mongodb-community
+brew services stop mongodb-community
+
+mongosh
+show dbs
+show collections
+use tap-news
+
+db.demo.find()  // the same method as the following one
+db["news-test"].find()
+https://www.mongodb.com/docs/mongodb-shell/crud/delete/
+
+==========
+sudo npm start
+sudo nodemon start
+
+lsof -i:3000
+sudo kill -9 pid
+sudo killall -9 node
+

@@ -6,10 +6,6 @@
 cd web_server/server
 nodemon start
 
-# start client
-cd web_server/client
-npm start
-
 echo "=================================================="
 read -p "PRESS [ANY KEY] TO TERMINATE PROCESSES." PRESSKEY
 
