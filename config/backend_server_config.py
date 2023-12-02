@@ -4,7 +4,7 @@ SERVER_PORT = 4040
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 
-LOG_CLICKS_TASK_QUEUE_URL = "amqps://hjdehfzs:SBV4KZbGx_pHacl42MzfYGlDzudQwqRZ@fish.rmq.cloudamqp.com/hjdehfzs"
+LOG_CLICKS_TASK_QUEUE_URL = ""
 LOG_CLICKS_TASK_QUEUE_NAME = "tap-news-log-clicks-task-queue"
 
 NEWS_TABLE_NAME = "news-test"
