@@ -1,4 +1,4 @@
-CLOUDAMQP_URL = "amqps://ahkufdzq:AVcDKu5oRlZd0bohjcB2wnIAiiR_E_XY@fish.rmq.cloudamqp.com/ahkufdzq"
+CLOUDAMQP_URL = ""
 
 TEST_QUEUE_NAME = "test"
 
@@ -7,7 +7,7 @@ MONGO_DB_PORT = 27017
 DB_NAME = 'tap-news'
 
 NEWS_API_ENDPOINT = 'https://newsapi.org/v1/'
-NEWS_API_KEY = '29e05503b1704fd3872d835d7627a065'
+NEWS_API_KEY = ''
 ARTICLES_API = 'articles'
 
 CNN = 'cnn'
