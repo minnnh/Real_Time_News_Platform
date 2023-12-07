@@ -12,7 +12,7 @@ Real Time News Scraping and Recommendation System is a web application that prov
 
 ## Built with
 - __News Pipeline__: MongoDB, Redis, RabbitMQ, TF-IDF
-- __News Topic Modeling__: Tensorflow, CNN, NLP
+- __News Topic Modeling__: TensorFlow, CNN, NLP
 - __News Recommendation__: NLP
 - __Web Server__: React, Node.js, RPC, SOA, JWT
 
